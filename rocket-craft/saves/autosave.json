@@ -1,0 +1,86 @@
+{
+  "version": "0.1.0",
+  "timestamp": "2026-05-30T18:25:08",
+  "money": 50000,
+  "day": 1,
+  "hour": 7,
+  "minute": 53.41199999999987,
+  "time_speed": 1.0,
+  "day_length_seconds": 600.0,
+  "unlocked_parts": [
+    "basic_pod",
+    "small_tank",
+    "medium_tank",
+    "basic_engine",
+    "advanced_engine",
+    "small_wing",
+    "landing_leg"
+  ],
+  "rocket_config": [],
+  "completed_contracts": [],
+  "reputation": 0,
+  "research_points": 0,
+  "story_completed_events": [],
+  "story_choices": {},
+  "story_flags": {
+    "seen_homes_hint": true
+  },
+  "npc_morale": {
+    "dr_chen": 5,
+    "bob": 5,
+    "maria": 5,
+    "jenkins": 5
+  },
+  "npc_positions": {
+    "Dr. Chen": [
+      1315.0,
+      525.0
+    ],
+    "Bob": [
+      330,
+      890
+    ],
+    "Maria": [
+      735.0,
+      515.0
+    ],
+    "Old Man Jenkins": [
+      835.0,
+      825.0
+    ]
+  },
+  "npc_memory": {},
+  "seen_town_intro": true,
+  "player_name": "d",
+  "player_gender": "unspecified",
+  "player_color": [
+    255,
+    236,
+    39
+  ],
+  "home_decor_style": "science",
+  "mailbox": [
+    {
+      "id": "welcome_council",
+      "from": "Town Council",
+      "subject": "Welcome to your cottage",
+      "body": "Welcome home. The cottage is yours to arrange. Check the decor desk inside when you want to change the room.",
+      "day": 1,
+      "read": true
+    },
+    {
+      "id": "bob_tools",
+      "from": "Bob",
+      "subject": "Mailbox works",
+      "body": "I fixed the mailbox hinge. It squeaks less now. That is progress.",
+      "day": 1,
+      "read": true
+    }
+  ],
+  "inventory": [],
+  "completed_deep_dialogues": [],
+  "deep_dialogue_progress": {},
+  "lore_unlocked": [],
+  "seen_intro": true,
+  "has_seen_intro": true
+}

@@ -1,0 +1,261 @@
+{
+  "day_1_hangar_power": {
+    "day": 1,
+    "trigger": ["hangar", "hangar_area"],
+    "title": "First Day at the Center",
+    "description": "The hangar lights die the moment you step inside. The team can only bring one system back online tonight.",
+    "npc_dialogues": {
+      "bob": "ไฟดับแบบนี้แปลว่าฐานยังมีนิสัยเดิมอยู่ เครื่องยนต์ไม่ชอบความมืดหรอก",
+      "jenkins": "ฐานนี้เคยเกือบส่งคนไปดวงจันทร์นะ เด็กเอ๋ย แค่ตอนนี้มันลืมวิธีเปิดไฟ"
+    },
+    "choices": [
+      {
+        "text": "Spend $5,000 to repair hangar power",
+        "result_text": "The hangar comes alive. Bob gives the main breaker a quiet approving nod.",
+        "money_delta": -5000,
+        "morale_delta": {"bob": 1},
+        "flags": {"power_fixed": true}
+      },
+      {
+        "text": "Buy used batteries for Dr. Chen's lab",
+        "result_text": "The lab hums through the night. Dr. Chen starts calculating by desk lamp and stubbornness.",
+        "money_delta": -3000,
+        "morale_delta": {"dr_chen": 1},
+        "flags": {"lab_powered": true}
+      }
+    ]
+  },
+  "day_8_orion_warning": {
+    "day": 8,
+    "trigger": ["mailbox", "plaza"],
+    "title": "Echoes from Orion",
+    "description": "A legal warning from Orion arrives by courier. It claims your fuel process may violate their intellectual property.",
+    "npc_dialogues": {
+      "maria": "พวกเขากลัวเราแล้ว ถ้าไม่กลัวคงไม่เสียเงินให้ทนายพิมพ์จดหมายแบบนี้",
+      "jenkins": "ผมเคยได้จดหมายแบบนี้หลัง Apollo 11 ต่างกันแค่ว่าสมัยนั้นกระดาษหนากว่า"
+    },
+    "choices": [
+      {
+        "text": "Change the fuel formula safely (-$2,000)",
+        "result_text": "The team loses time, but the legal ground gets steadier.",
+        "money_delta": -2000,
+        "research_delta": 1,
+        "morale_delta": {"maria": 1},
+        "flags": {"fuel_formula_changed": true, "orion_pressure": 1},
+        "add_mail": [
+          {"id": "orion_warning_safe", "from": "Maria", "subject": "Fuel formula decision", "body": "I filed the new formula under our own notes. Slower, yes. Cleaner, definitely."}
+        ]
+      },
+      {
+        "text": "Keep the current formula",
+        "result_text": "You keep the performance edge. Orion's next move may be sharper.",
+        "morale_delta": {"bob": 1, "maria": -1},
+        "flags": {"fuel_formula_changed": false, "orion_pressure": 2}
+      }
+    ]
+  },
+  "day_9_hangar_leak": {
+    "day": 9,
+    "trigger": ["hangar", "hangar_area"],
+    "title": "Royal Rain",
+    "description": "A heavy storm opens the hangar roof right above the new engine. Water drips onto the test stand.",
+    "npc_dialogues": {
+      "bob": "หลังคารั่วตรงเครื่องยนต์พอดี โลกมีมุกตลกแย่ ๆ",
+      "dr_chen": "บ็อบไม่ใช่เด็กแล้วนะครับ ให้เขาปีนขึ้นไปตอนฝนตกแบบนี้ผมไม่สบายใจเลย"
+    },
+    "choices": [
+      {
+        "text": "Let Bob repair it in the storm",
+        "result_text": "Bob fixes the worst leak, but everyone watches the ladder until he climbs down.",
+        "morale_delta": {"bob": 1, "dr_chen": -1},
+        "flags": {"bob_roof_repair": true}
+      },
+      {
+        "text": "Hire town roofers (-$3,000)",
+        "result_text": "The repair is safe and quick. The engine stays dry.",
+        "money_delta": -3000,
+        "reputation_delta": 1,
+        "morale_delta": {"maria": 1},
+        "flags": {"hired_roofers": true}
+      },
+      {
+        "text": "Wait and protect the engine with tarps",
+        "result_text": "The team saves money, but the engine will need extra inspection.",
+        "morale_delta": {"bob": -1},
+        "flags": {"engine_water_risk": true}
+      }
+    ]
+  },
+  "day_10_school_visit": {
+    "day": 10,
+    "trigger": ["plaza"],
+    "title": "The Girl with the Drawing",
+    "description": "A local schoolgirl brings a drawing of your rocket and says she wants to be an astronaut.",
+    "npc_dialogues": {
+      "jenkins": "เด็กคนหนึ่งเดินมาที่ฐานเพราะความฝัน ไม่ใช่เพราะข่าวล้มเหลว ผมรอมานานแล้ว",
+      "dr_chen": "ถ้าเราเปิดศูนย์ให้เด็ก ๆ ดู มันจะเสียเวลาหนึ่งวัน แต่บางทีเวลานั้นอาจสำคัญกว่าเงิน"
+    },
+    "choices": [
+      {
+        "text": "Host a community open day",
+        "result_text": "The town starts calling the center theirs, not yours.",
+        "reputation_delta": 3,
+        "morale_delta": {"dr_chen": 1, "jenkins": 2},
+        "flags": {"community_open_day": true}
+      },
+      {
+        "text": "Give her a private tour",
+        "result_text": "It stays small, but the moment feels honest.",
+        "reputation_delta": 1,
+        "morale_delta": {"jenkins": 1},
+        "flags": {"private_school_tour": true}
+      },
+      {
+        "text": "Politely decline; the team is too busy",
+        "result_text": "Nothing breaks. It just feels a little quieter afterward.",
+        "morale_delta": {"jenkins": -1, "dr_chen": -1},
+        "flags": {"declined_school_visit": true}
+      }
+    ]
+  },
+  "day_11_moon_window": {
+    "day": 11,
+    "trigger": ["contracts", "mission_zone"],
+    "title": "The Countdown",
+    "description": "Maria lays out three launch windows for the Moon attempt. Weather, readiness, and orbital math do not agree.",
+    "npc_dialogues": {
+      "maria": "ไม่มีคำตอบที่ถูก มีแค่ผลลัพธ์ที่เราต้องยอมรับหลังจากเลือกไปแล้ว",
+      "dr_chen": "วันที่ 12 ฟ้าดีมากครับ แต่สมการยังทำหน้าตาเหมือนมันซ่อนอะไรไว้"
+    },
+    "choices": [
+      {
+        "text": "Launch on Day 12: best weather, risky math",
+        "result_text": "Maria marks Day 12 in red. Dr. Chen goes very quiet.",
+        "morale_delta": {"maria": 1, "dr_chen": -1},
+        "flags": {"moon_launch_day": 12}
+      },
+      {
+        "text": "Launch on Day 13: balanced readiness",
+        "result_text": "The room exhales. No one says easy; they say ready.",
+        "morale_delta": {"maria": 1, "bob": 1, "dr_chen": 1},
+        "flags": {"moon_launch_day": 13}
+      },
+      {
+        "text": "Launch on Day 14: more prep, worse weather",
+        "result_text": "Bob asks for another checklist. Jenkins watches the clouds.",
+        "research_delta": 1,
+        "morale_delta": {"bob": 1, "jenkins": -1},
+        "flags": {"moon_launch_day": 14}
+      }
+    ]
+  },
+  "day_12_moon_attempt": {
+    "day": 12,
+    "trigger": ["hangar", "hangar_area"],
+    "requires": {"moon_launch_day": 12},
+    "title": "Moon Attempt: Early Window",
+    "description": "The sky is clear, but the numbers still twitch. Launching today means trusting the team under pressure.",
+    "npc_dialogues": {
+      "dr_chen": "ถ้าการคำนวณผิด ผมจะแก้กลางทางให้ได้ ผมแค่หวังว่ามือจะไม่สั่น",
+      "bob": "เครื่องยนต์พร้อม คนค่อยตามให้ทัน"
+    },
+    "choices": [
+      {
+        "text": "Commit to the early launch",
+        "result_text": "The flight is rough, brilliant, and yours. The Moon is no longer just a light in the sky.",
+        "reputation_delta": 4,
+        "research_delta": 2,
+        "morale_delta": {"dr_chen": 2, "bob": 1, "maria": 1, "jenkins": 2},
+        "flags": {"moon_landing": true, "moon_path": "early"},
+        "complete_contract": "Moon Landing",
+        "add_mail": [
+          {"id": "moon_early_journal", "from": "Dr. Chen", "subject": "Mid-flight correction notes", "body": "I wrote the correction by hand after landing. My hands were still shaking."}
+        ]
+      }
+    ]
+  },
+  "day_13_moon_attempt": {
+    "day": 13,
+    "trigger": ["hangar", "hangar_area"],
+    "requires": {"moon_launch_day": 13},
+    "title": "Moon Attempt: Balanced Window",
+    "description": "The vehicle, crew, and sky align as well as they ever will. There is still no such thing as safe. Only ready.",
+    "npc_dialogues": {
+      "maria": "สัญญาณหายสามสิบวินาที แล้วกลับมา ผมไม่เคยรักเสียง static ขนาดนี้มาก่อน",
+      "jenkins": "มีคนไปยืนบนนั้น ในนามของเรา"
+    },
+    "choices": [
+      {
+        "text": "Launch the balanced mission",
+        "result_text": "The signal drops, returns, and the whole town hears Maria say mission success.",
+        "reputation_delta": 5,
+        "research_delta": 2,
+        "morale_delta": {"dr_chen": 2, "bob": 2, "maria": 2, "jenkins": 2},
+        "flags": {"moon_landing": true, "moon_path": "balanced"},
+        "complete_contract": "Moon Landing",
+        "add_mail": [
+          {"id": "moon_signal_maria", "from": "Maria", "subject": "Thirty seconds", "body": "I logged the signal loss. I did not log that I forgot to breathe."}
+        ]
+      }
+    ]
+  },
+  "day_14_moon_attempt": {
+    "day": 14,
+    "trigger": ["hangar", "hangar_area"],
+    "requires": {"moon_launch_day": 14},
+    "title": "Moon Attempt: Closing Weather",
+    "description": "Clouds roll in over the pad. Waiting helped the vehicle, but the sky wants the final vote.",
+    "npc_dialogues": {
+      "maria": "นี่ไม่ใช่ความกล้าอย่างเดียว นี่คือการตัดสินใจตอนที่ข้อมูลไม่ยอมสมบูรณ์",
+      "bob": "ถ้าจะไป ก็ไปตอนเครื่องยนต์ยังเชื่อเราอยู่"
+    },
+    "choices": [
+      {
+        "text": "Launch through the closing window",
+        "result_text": "The launch fights weather all the way up, then breaks into clean black sky.",
+        "reputation_delta": 5,
+        "research_delta": 3,
+        "morale_delta": {"bob": 2, "maria": 1, "jenkins": 2},
+        "flags": {"moon_landing": true, "moon_path": "late"},
+        "complete_contract": "Moon Landing",
+        "add_mail": [
+          {"id": "moon_late_bob", "from": "Bob", "subject": "Engine note", "body": "The engine sounded angry. Good angry."}
+        ]
+      },
+      {
+        "text": "Scrub and keep the team safe",
+        "result_text": "The Moon waits. The team trusts you more for not forcing it.",
+        "reputation_delta": 1,
+        "morale_delta": {"maria": 2, "bob": 1},
+        "flags": {"moon_landing": false, "moon_scrubbed": true}
+      }
+    ]
+  },
+  "day_15_orion_offer": {
+    "day": 15,
+    "trigger": ["mailbox", "plaza"],
+    "requires": {"moon_landing": true},
+    "title": "A Different Kind of Letter",
+    "description": "Orion no longer threatens. They offer partnership, money, and a clean road back to the world that fired you.",
+    "npc_dialogues": {
+      "maria": "พวกเขาไม่ได้อยากช่วยเรา พวกเขาอยากซื้อความหมายของสิ่งที่เราทำ",
+      "jenkins": "ระวังคนที่เอาเช็คมาให้หลังจากเห็นว่าคุณบินได้แล้ว"
+    },
+    "choices": [
+      {
+        "text": "Reject Orion publicly",
+        "result_text": "The town cheers. Orion now knows exactly where you stand.",
+        "reputation_delta": 4,
+        "morale_delta": {"maria": 2, "jenkins": 2},
+        "flags": {"orion_offer": "rejected"}
+      },
+      {
+        "text": "Delay and ask for terms",
+        "result_text": "You keep the door cracked open, and nobody sleeps well.",
+        "money_delta": 5000,
+        "morale_delta": {"maria": -1, "dr_chen": -1},
+        "flags": {"orion_offer": "delayed"}
+      }
+    ]
+  }
+}

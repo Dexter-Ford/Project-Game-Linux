@@ -1,0 +1,21 @@
+[build-system]
+requires = ["maturin>=1.5,<2"]
+build-backend = "maturin"
+
+[project]
+name = "rocketcraft-engine"
+version = "0.1.0"
+description = "Rust physics extension for RocketCraft (optional)"
+requires-python = ">=3.9"
+classifiers = [
+    "Programming Language :: Rust",
+    "Programming Language :: Python :: Implementation :: CPython",
+]
+
+[project.optional-dependencies]
+dev = ["maturin>=1.5,<2"]
+
+[tool.maturin]
+manifest-path = "engine/Cargo.toml"
+module-name = "engine"
+features = ["pyo3/extension-module"]
